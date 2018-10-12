@@ -2,5 +2,4 @@
 this is NJU website for video upload
 
 
-
-[![Build Status](unknown.svg)](https://travis-ci.org/njulzb/NJUVideoUploadWebSite)
+[![Build Status](https://travis-ci.org/njulzb/NJUVideoUploadWebSite.svg?branch=master)](https://travis-ci.org/njulzb/NJUVideoUploadWebSite)

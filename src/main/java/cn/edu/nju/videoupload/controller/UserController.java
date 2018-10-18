@@ -17,7 +17,7 @@ public class UserController {
     }
     @RequestMapping("/")
     public ModelAndView index(){
-        return new ModelAndView("blanke.html");
+        return new ModelAndView("index.html");
 
 
 

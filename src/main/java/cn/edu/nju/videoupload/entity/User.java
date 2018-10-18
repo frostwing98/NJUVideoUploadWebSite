@@ -3,6 +3,7 @@ package cn.edu.nju.videoupload.entity;
 import cn.edu.nju.videoupload.utils.PropNotExistsException;
 import lombok.Data;
 
+import javax.persistence.ManyToMany;
 import java.util.Map;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Map;
 public class User {
 
     private String userID , password;
+    @ManyToMany
     private Map<String ,String> propertyMap;
 
 

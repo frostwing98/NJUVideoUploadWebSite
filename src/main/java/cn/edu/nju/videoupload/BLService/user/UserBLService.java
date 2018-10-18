@@ -1,4 +1,4 @@
-package cn.edu.nju.videoupload.BLService;
+package cn.edu.nju.videoupload.BLService.user;
 
 import cn.edu.nju.videoupload.entity.UserVO;
 import cn.edu.nju.videoupload.utils.BadExcelFileException;

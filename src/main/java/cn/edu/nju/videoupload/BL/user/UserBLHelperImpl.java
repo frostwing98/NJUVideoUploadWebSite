@@ -14,8 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserBLHelperImpl implements UserBLHelper{
 
+    private final UserDao userDao;
+
     @Autowired
-    private UserDao userDao;
+    public UserBLHelperImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public User getUserByID(String userID) throws UserNotExistException {

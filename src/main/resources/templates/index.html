@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Index/Login</title>
+
+		<!--JQuery-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!--AngularJS-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<!--layUI-->
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<script src="layui/layui.js"></script>
+
+		<style>
+			html {
+				width: 100%;
+				background: #eeeeee;
+			}
+			
+			body {
+				margin: 3%;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="layui-row layui-col-space15">
+
+			<div class="layui-col-sm6 layui-col-md8">
+				<div style="text-align: center;">
+					<h1>艺术生视频系统</h1>
+				</div>
+
+			</div>
+			<div class="layui-col-sm6 layui-col-md4">
+				<div class="layui-card" style="min-height: 200px;">
+					<div class="layui-card-header">
+						登录
+					</div>
+					<div class="layui-card-body layuiadmin-card-list ">
+						<form class="layui-form" action="">
+							<div class="layui-form-item">
+								<label class="layui-form-label">账号</label>
+								<div class="layui-input-block">
+									<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-form-item">
+								<label class="layui-form-label">密码</label>
+								<div class="layui-input-inline">
+									<input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+								</div>
+								<div class="layui-form-mid layui-word-aux">
+									<a href="#">忘记密码？</a>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">验证码</label>
+								<div class="layui-input-block">
+									<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+									<!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+	</body>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+
+		});
+	</script>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>管理中心</title>
+
+		<!--JQuery-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!--AngularJS-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<!--layUI-->
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<script src="layui/layui.js"></script>
+
+		<style>
+			html {
+				width: 100%;
+				background: #eeeeee;
+			}
+			
+			body {
+				margin: 3%;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="layui-row layui-col-space15">
+
+			<div class="layui-col-sm6 layui-col-md2">
+				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+					<li class="layui-nav-item">
+						<a href="javascript:;">管理员信息</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">文件下载</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">用户信息浏览</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">当前上传信息</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">？</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">？</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">其他操作</a>
+					</li>
+				</ul>
+			</div>
+			<div class="layui-col-sm6 layui-col-md10">
+				<div class="layui-card" style="min-height: 200px;">
+					<div class="layui-card-header">
+						文件下载
+
+					</div>
+					<div class="layui-card-body layuiadmin-card-list" style="padding: 20px;">
+<div>
+	<span> 当前共有710 个文件，累计大小14，663GB</span>
+	
+</div>
+						<div style="text-align: center;margin: 30px;">
+							<button class="layui-btn" >
+									 下载所有文件
+							</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+	</body>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+
+		});
+	</script>
+
+</html>

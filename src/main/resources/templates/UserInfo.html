@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>information</title>
+
+		<!--JQuery-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!--AngularJS-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<!--layUI-->
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<script src="layui/layui.js"></script>
+
+		<style>
+			html {
+				width: 100%;
+				background: #eeeeee;
+			}
+			
+			body {
+				margin: 3%;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="layui-row layui-col-space15">
+
+			<div class="layui-col-sm6 layui-col-md2">
+				<div style="text-align: center;">
+					<h1>信息确认</h1>
+				</div>
+
+			</div>
+			<div class="layui-col-sm6 layui-col-md10">
+				<div class="layui-card" style="min-height: 200px;">
+					<div class="layui-card-header">
+						信息确认
+						<span style="float:right">如有错误，请拨打XXXXXXXXXXX</span>
+					</div> 
+					<div class="layui-card-body layuiadmin-card-list" style="padding: 20px;">
+						<strong>请确认下列信息是否与你一致！</strong>
+						<table class="layui-table">
+							<colgroup>
+								<col width="150">
+								<col width="150">
+								<col width="300">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>姓名</th>
+									<th>性别</th>
+									<th>身份证号</th>
+									<th>加入时间</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>李帅哥</td>
+									<td>男</td>
+									<td>2011213821412410129</td>
+									<td>2018-10-29</td>
+								</tr>
+							</tbody>
+							<thead>
+								<tr>
+									<th>学校</th>
+									<th>乐团</th>
+									<th>乐器</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>XXXXXXXX</td>
+									<td>XXXX</td>
+									<td>大提琴</td>
+								</tr>
+
+							</tbody>
+						</table>
+						<div style="text-align: center;margin: 30px;">
+							<button class="layui-btn">
+									  我已确认无误，进入上传界面
+							</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+	</body>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+
+		});
+	</script>
+
+</html>

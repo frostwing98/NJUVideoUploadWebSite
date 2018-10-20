@@ -2,6 +2,7 @@ package cn.edu.nju.videoupload.BL.user;
 
 import cn.edu.nju.videoupload.entity.User;
 import cn.edu.nju.videoupload.utils.UserNotExistException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,9 +12,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserBLInterfaceImpl implements UserBLInterface {
 
+    private final UserBLHelper userBLHelper;
+
+    @Autowired
+    public UserBLInterfaceImpl(UserBLHelper userBLHelper) {
+        this.userBLHelper = userBLHelper;
+    }
 
     @Override
     public User fetchUserInfo(String userID) throws UserNotExistException {
-        return null;
+        return userBLHelper.getUserByID(userID);
     }
 }

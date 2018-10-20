@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @date 2018/10/16 19:37
  */
 @Repository
-@Table(name = "user")//这里表名要统一
+@Table(name = "users")//这里表名要统一
 public interface UserDao extends JpaRepository<User,String> {
 
 

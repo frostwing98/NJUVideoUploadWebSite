@@ -2,10 +2,9 @@ package cn.edu.nju.videoupload.entity;
 
 import cn.edu.nju.videoupload.utils.PropNotExistsException;
 import lombok.Data;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Map;
 
 /**
@@ -13,12 +12,17 @@ import java.util.Map;
  * @date 2018/10/16 19:02
  */
 @Data
+@Entity(name = "users")
+@ToString
 public class User {
 
     @Id
     private String userID ;
     private String password;
-    @ManyToMany
+    @ElementCollection
+    @CollectionTable(name="myproperty")
+    @MapKeyColumn(name="myvalue")
+    @Column(name="mykey")
     private Map<String ,String> propertyMap;
 
     public String getUserID() {

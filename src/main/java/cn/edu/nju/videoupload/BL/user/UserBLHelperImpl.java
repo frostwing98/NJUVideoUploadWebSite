@@ -27,27 +27,49 @@ public class UserBLHelperImpl implements UserBLHelper {
 
     @Override
     public User getUserByID(String userID) throws UserNotExistException {
-        return null;
+        User user = userDao.findById(userID).orElse(null);
+        if (user == null) {
+            throw new UserNotExistException("用户不存在");
+        } else {
+            return user;
+        }
     }
 
     @Override
     public User updateUser(User updatedUser) throws UserNotExistException {
-        return null;
+        getUserByID(updatedUser.getUserID());//如果没找到就抛出异常
+        userDao.save(updatedUser);//保存更改
+        return getUserByID(updatedUser.getUserID());
     }
 
     @Override
-    public User createUser(User user) throws BadUserFormatException {
-        return null;
+    public User createUser(User user) throws BadUserFormatException, UserNotExistException {
+        if (user.getUserID() == null || user.getPassword() == null) {
+            throw new BadUserFormatException("用户名或密码为空");
+        }
+        userDao.save(user);//保存更改
+        return getUserByID(user.getUserID());
     }
 
     @Override
     public boolean deleteUserByID(String userID) throws UserNotExistException {
-        return false;
+        getUserByID(userID);//如果没找到就抛出异常
+        try {
+            userDao.deleteById(userID);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
     public boolean ifUserIDExists(String userID) throws UserNotExistException {
-        return false;
+        try {
+            getUserByID(userID);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override

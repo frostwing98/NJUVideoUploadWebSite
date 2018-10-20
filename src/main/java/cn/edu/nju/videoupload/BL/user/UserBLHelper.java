@@ -19,7 +19,7 @@ public interface UserBLHelper {
 
     User updateUser(User updatedUser) throws UserNotExistException;
 
-    User createUser(User user) throws BadUserFormatException;
+    User createUser(User user) throws BadUserFormatException, UserNotExistException;
 
     boolean deleteUserByID(String userID) throws UserNotExistException;
 

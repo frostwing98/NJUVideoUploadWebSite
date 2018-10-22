@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>upload</title>
+
+		<!--JQuery-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<!--AngularJS-->
+		<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<!--layUI-->
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<script src="layui/layui.js"></script>
+
+		<style>
+			html {
+				width: 100%;
+				background: #eeeeee;
+			}
+			
+			body {
+				margin: 3%;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="layui-row layui-col-space15">
+
+			<div class="layui-col-sm6 layui-col-md2">
+				<div class="layui-card" style="min-height: 200px;">
+					<div class="layui-card-header">
+						我
+					</div>
+					<div class="layui-card-body layuiadmin-card-list ">
+						<div>
+							姓名：XXX
+						</div>
+						<div>
+							证件号：XXXXXXXXXXXXXX
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-sm6 layui-col-md10">
+				<div class="layui-card" style="min-height: 200px;">
+					<div class="layui-card-header">
+						我的文件
+
+					</div>
+					<div class="layui-card-body layuiadmin-card-list" style="padding: 20px;">
+
+						<div style="text-align: center;margin: 30px;">
+							<button class="layui-btn" id="btnUpload">
+									 立即上传
+							</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+	</body>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+			layui.use('upload', function() {
+				var upload = layui.upload;
+
+				//执行实例
+				var uploadInst = upload.render({
+					elem: '#btnUpload' 
+						,
+					url: '/upload/' 
+						,
+					done: function(res) {
+						//上传完毕回调
+					},
+					error: function() {
+						//请求异常回调
+					}
+				});
+			});
+		});
+	</script>
+
+</html>

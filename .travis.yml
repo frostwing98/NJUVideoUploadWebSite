@@ -5,8 +5,8 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod +x mvnw
 - chmod 600 ~/.ssh/id_rsa
-- mysql -u root -e 'CREATE DATABASE videoupload;'
+- echo -e "Host 101.132.38.91\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 addons:
   ssh_known_hosts: 101.132.38.91
 after_success:
-- ssh root@101.132.38.91 "./do.sh"
+- ssh travis@101.132.38.91 -p travis "./do.sh"

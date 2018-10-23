@@ -12,4 +12,4 @@ addons:
     packages:
     - sshpass
 after_success:
-- sshpass -p travis ssh travis@101.132.38.91 "/home/travis/NJUVideoUploadSite/do.sh"
+- sshpass -p travis ssh travis@101.132.38.91 "/home/travis/NJUVideoUploadWebSite/do.sh"

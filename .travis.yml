@@ -1,12 +1,15 @@
 language: java
 jdk: oraclejdk8
 before_install:
-- openssl aes-256-cbc -K $encrypted_a71f75638356_key -iv $encrypted_a71f75638356_iv
+- openssl aes-256-cbc -K $encrypted_2ce8ae048c38_key -iv $encrypted_2ce8ae048c38_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod +x mvnw
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 101.132.38.91\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 addons:
   ssh_known_hosts: 101.132.38.91
+  apt:
+    packages:
+    - sshpass
 after_success:
-- ssh travis@101.132.38.91 -p travis "/home/travis/NJUVideoUploadWebSite/do.sh"
+- sshpass -p travis ssh travis@101.132.38.91 "/home/travis/NJUVideoUploadWebSite/do.sh"

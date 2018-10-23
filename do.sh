@@ -1,4 +1,4 @@
-cd /home/travis/NJUVideoUploadWebsite
+cd /home/travis/NJUVideoUploadWebSite
 git pull origin master
 echo 'travis build done'
-echo 'again'
+#echo 'again'

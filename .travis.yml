@@ -8,5 +8,8 @@ before_install:
 - echo -e "Host 101.132.38.91\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 addons:
   ssh_known_hosts: 101.132.38.91
+  apt:
+    packages:
+    - sshpass
 after_success:
 - sshpass -p travis ssh travis@101.132.38.91 "/home/travis/NJUVideoUploadSite/do.sh"

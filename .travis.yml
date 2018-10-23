@@ -5,6 +5,7 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod +x mvnw
 - chmod 600 ~/.ssh/id_rsa
+- mysql -u root -e 'CREATE DATABASE testbase;'
 addons:
   ssh_known_hosts: 101.132.38.91
 after_success:

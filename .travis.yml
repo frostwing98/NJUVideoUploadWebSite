@@ -9,4 +9,4 @@ before_install:
 addons:
   ssh_known_hosts: 101.132.38.91
 after_success:
-- ssh travis@101.132.38.91 -p travis "./do.sh"
+- ssh travis@101.132.38.91 -p travis "/home/travis/NJUVideoUploadWebSite/do.sh"
